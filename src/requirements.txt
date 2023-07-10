@@ -1,0 +1,11 @@
+git+https://github.com/huggingface/transformers
+git+https://github.com/huggingface/accelerate
+git+https://github.com/huggingface/peft
+huggingface-hub
+bitsandbytes
+evaluate
+datasets
+wandb
+librosa
+jiwer
+gradio
