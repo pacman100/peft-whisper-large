@@ -590,7 +590,7 @@ def main():
             config = LoraConfig(
                 r=args.r,
                 lora_alpha=args.lora_alpha,
-                target_modules=["k_proj", "q_proj", "v_proj", "out_proj"],
+                target_modules=["k_proj", "q_proj", "v_proj", "out_proj", "fc1", "fc2"],
                 lora_dropout=args.lora_dropout,
             )
 
