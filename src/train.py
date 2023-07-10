@@ -26,7 +26,7 @@ from accelerate.logging import get_logger
 from datasets import Audio, DatasetDict, IterableDatasetDict, interleave_datasets, load_dataset
 
 # hf imports
-from huggingface_hub import Repository
+from huggingface_hub import Repository, create_repo
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from transformers import (
@@ -461,6 +461,7 @@ def main():
                 repo_name = get_full_repo_name(Path(args.output_dir).name, token=args.hub_token)
             else:
                 repo_name = args.hub_model_id
+            create_repo(repo_name, exist_ok=True, token=args.hub_token)
             repo = Repository(args.output_dir, clone_from=repo_name)
 
             with open(os.path.join(args.output_dir, ".gitignore"), "w+") as gitignore:
